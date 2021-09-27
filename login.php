@@ -1,19 +1,27 @@
 <?php
 
-$conn = mysqli_connect("localhost", "root", "", "banco");
+$conn = mysqli_connect("localhost", "root", "", "banco") or die("não foi possível conectar");
 
-$usuario = $_POST['usuario'];
+$usuario_informado = $_POST['usuario1'];
 $senha = md5($_POST['senha']);
 
-$sqlinsert = "INSERT INTO tb_usuario(usuario,senha)
-VALUES('$usuario','$senha')";
+$sql = "SELECT * FROM tb_usuario";
 
-mysqli_query($conn, $sqlinsert) or die("Não foi possível inserir os dados");
+    $limite = mysqli_query($conn, $sql);
 
-//Mostra os dados inseridos
+while ($sql = mysqli_fetch_array($limite)){
+    $codigo = $sql['codigo'];
+    $usuario_banco = $sql['usuario'];
+}
 
-echo "Usuario inserido <br> Usuario: $usuario";
+//dados mostrados
 
-echo "<br>";
+echo "Usuarios cadastrados Codigo: $codigo <br> Usuario: $usuario_banco <br>";
 
-echo "Senha inserida <br> Senha: $senha";
+if ($usuario_informado == $usuario_banco){
+    echo "Usuario existente"
+} else {
+    echo "Usuario não existente";
+}
+
+echo "<a href='index.html'>Voltar</a>";
