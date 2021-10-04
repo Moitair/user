@@ -2,26 +2,19 @@
 
 $conn = mysqli_connect("localhost", "root", "", "banco") or die("não foi possível conectar");
 
-$usuario_informado = $_POST['usuario1'];
-$senha = md5($_POST['senha1']);
+$usuario2 = $_POST['usuario1'];
+$senha2 = md5($_POST['senha1']);
 
-$sql = "SELECT * FROM tb_usuario";
+$sqlbusca = "SELECT * FROM tb_usuario WHERE usuario = '$usuario2' AND senha = '$senha2'";
 
-    $limite = mysqli_query($conn, $sql);
+$dados = mysqli_query($conn, $sqlbusca) or die("não foin possível buscar os dados");
 
-while ($sql = mysqli_fetch_array($limite)){
-    $codigo = $sql['codigo'];
-    $usuario_banco = $sql['usuario'];
-}
+if  (mysqli_num_rows($dados)<=0){
+    echo "Usuario não cadastrado ou dados invalidos";
+}else{
+    echo "Login efetuado com sucesso";
 
-//dados mostrados
-
-echo "Usuarios cadastrados Codigo: $codigo <br> Usuario: $usuario_banco <br>";
-
-if ($usuario_informado == $usuario_banco){
-    echo "Usuario existente";
-} else {
-    echo "Usuario não existente";
+    echo "<br>";
 }
 
 echo "<a href='index.html'>Voltar</a>";
