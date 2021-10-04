@@ -19,7 +19,7 @@ while ($sql = mysqli_fetch_array($limite)){
 echo "Usuarios cadastrados Codigo: $codigo <br> Usuario: $usuario_banco <br>";
 
 if ($usuario_informado == $usuario_banco){
-    echo "Usuario existente"
+    echo "Usuario existente";
 } else {
     echo "Usuario não existente";
 }
