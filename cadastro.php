@@ -2,18 +2,28 @@
 
 $conn = mysqli_connect("localhost", "root", "", "banco");
 
-$usuario = $_POST['usuario'];
+$usuario1 = $_POST['usuario'];
 $senha = md5($_POST['senha']);
 
-$sqlinsert = "INSERT INTO tb_usuario(usuario,senha)
-VALUES('$usuario','$senha')";
+$sqlbusca = "SELECT * FROM tb_user WHERE usuario = '$usuario'"
 
-mysqli_query($conn, $sqlinsert) or die("Não foi possível inserir os dados");
+$resultado = mysqli_query($conn, $sqlbusca) or die("não foi possível buscar os dados")
 
-//Mostra os dados inseridos
+if($usuario1 == "" || $usuario1 = null){
+    echo "O campo não pode ser vazio";
+}
 
-echo "Usuario inserido <br> Usuario: $usuario";
+if  (mysqli_num_rows($resultado)>0){
+    echo "Usuario já existe";
+}else{
+    $sqlinsert = "INSERT INTO tb_usuario(usuario,senha) VALUES('$usuario','$senha')";
 
-echo "<br>";
+    mysqli_query($conn, $sqlinsert) or die("Não foi possível inserir os dados");
+
+    echo "Usuario inserido <br> Usuario: $usuario";
+
+    echo "<br>"; 
+}
 
 echo "<a href='index.html'>Voltar</a>";
+

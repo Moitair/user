@@ -3,7 +3,7 @@
 $conn = mysqli_connect("localhost", "root", "", "banco") or die("não foi possível conectar");
 
 $usuario_informado = $_POST['usuario1'];
-$senha = md5($_POST['senha']);
+$senha = md5($_POST['senha1']);
 
 $sql = "SELECT * FROM tb_usuario";
 
