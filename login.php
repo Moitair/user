@@ -12,11 +12,19 @@ $dados = mysqli_query($conn, $sqlbusca) or die("não foin possível buscar os da
 if  (mysqli_num_rows($dados)<=0){
     echo "Usuario não cadastrado ou dados invalidos";
 }else{
-    echo "Login efetuado com sucesso";
+    echo "Login efetuado com sucesso <br>";
 
     if(isset($usuario2)){
-        setcookie("usuario", $usuario2, time() + 60);
+        session_start();
+        $_SESSION['usuario'] = $usuario2;
     }
+    header("Location: novo.php");
+
+    //if(isset($usuario2)){
+    //    setcookie("usuario", $usuario2, time() + 60);
+    //}
+    //$teste = $_COOKIE["usuario"];
+    //echo "Usuario logado: $teste";
 
     echo "<br>";
 }
