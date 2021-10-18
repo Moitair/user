@@ -14,6 +14,10 @@ if  (mysqli_num_rows($dados)<=0){
 }else{
     echo "Login efetuado com sucesso";
 
+    if(isset($usuario2)){
+        setcookie("usuario", $usuario2, time() + 60);
+    }
+
     echo "<br>";
 }
 
