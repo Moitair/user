@@ -29,4 +29,4 @@ if  (mysqli_num_rows($dados)<=0){
     echo "<br>";
 }
 
-echo "<a href='index.html'>Voltar</a>";
+echo "<a href='index1.php'>Voltar</a>";
