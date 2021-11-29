@@ -53,12 +53,12 @@
   </div>
 
   <div class="right">
-    <h2>About</h2>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+    <h2>Promoção 5 anos</h2>
+    <p>em comemoração ao nosso aniversario de 5 anos todos os carros estão apenas por 1.000</p>
   </div>
 </div>
 
-<div class="bottom">© copyright w3schools.com</div>
+<div class="bottom">Locar CarrosLegais © 2016</div>
 
 </body>
 </html>

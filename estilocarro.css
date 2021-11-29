@@ -1,7 +1,9 @@
   body{
   margin: 0;
   padding: 0;
-  font-family:Verdana;color:#aaaaaa;
+  font-family:Verdana;
+  color:#aaaaaa;
+  background-color: #1A1A1A;
   }
 
   * {
@@ -9,14 +11,15 @@
   }
 
   .top{
-    background-color:#e5e5e5;
+    background-color: #111;
     padding: 15px;
     text-align: center;
-    color: black;
+    color: #FFFFFF;
   }
 
   .bottom{
-    background-color:#e5e5e5;
+    background-color:#2F2E33;
+    color: #FFFFFF;
     text-align:center;
     padding:10px;
     margin-top:7px;
@@ -29,17 +32,17 @@
     float: left;
     width: 20%;
     text-align: center;
-    color: black;
+    color: #FFFFFF;
   }
   
   .menu a {
-    background-color: #e5e5e5;
+    background-color: #2F2E33;
     text-decoration: none;
     padding: 8px;
     margin-top: 7px;
     display: block;
     width: 100%;
-    color: black;
+    color: #FFFFFF;
   }
 
   .menu a:hover{
@@ -53,17 +56,21 @@
     float: left;
     width: 60%;
     padding: 0 20px;
-    color: black;
+    color: #FFFFFF;
   }
   
   .right {
-    background-color: #e5e5e5;
+    background-color: #2F2E33;
     float: left;
     width: 20%;
     padding: 15px;
     margin-top: 7px;
     text-align: center;
-    color: black;
+    color: #FFFFFF;
+  }
+
+  .right > h2{
+    color: #E01200 !important; 
   }
   
   @media only screen and (max-width: 620px) {
@@ -80,7 +87,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #2F2E33;
   }
   
   li {
@@ -93,6 +100,13 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    transition: 0.5s;;
+  }
+
+  li a:hover {
+    transition: 0s;
+    color: #0f0;
+    text-shadow: 0 0 120px #0f0;
   }
   
   li a:hover:not(.active) {
