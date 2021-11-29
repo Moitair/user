@@ -10,7 +10,7 @@
 <body>
 
 </head>
-<body style="font-family:Verdana;color:#aaaaaa;">
+<body>
 
 <div class="top">
   <h1>Locar CarrosLegais</h1>
@@ -38,17 +38,17 @@
     <p>veja nosso veículos em destaque com preços acessíveis</p>
 
     <?php
-          $conn=mysqli_connect("localhost", "root", "","carrinho");
+      $conn=mysqli_connect("localhost", "root", "","carrinho");
                    
-          $sql = "SELECT * FROM produtos";
-          $qr = mysqli_query($conn,$sql) or die(mysqli_error());
-          while($ln = mysqli_fetch_assoc($qr)){
-             echo '<h2>'.$ln['nome'].'</h2> <br />';
-             echo 'Preço : R$ '.number_format($ln['preco'], 2, ',', '.').'<br />';
-             echo '<img src="img/'.$ln['imagem'].'" /> <br />';
-             echo '<a href="carrinho.php?acao=add&id='.$ln['id'].'">Comprar</a>';
-             echo '<br /><hr />';
-          }
+      $sql = "SELECT * FROM produtos";
+      $qr = mysqli_query($conn,$sql) or die(mysqli_error());
+      while($ln = mysqli_fetch_assoc($qr)){
+          echo '<h2>'.$ln['nome'].'</h2> <br />';
+          echo 'Preço : R$ '.number_format($ln['preco'], 2, ',', '.').'<br />';
+          echo '<img src="img/'.$ln['imagem'].'" /> <br />';
+          echo '<a href="carrinho.php?acao=add&id='.$ln['id'].'">Comprar</a>';
+          echo '<br /><hr />';
+      }
     ?>
   </div>
 
@@ -58,7 +58,7 @@
   </div>
 </div>
 
-<div style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">© copyright w3schools.com</div>
+<div class="bottom">© copyright w3schools.com</div>
 
 </body>
 </html>
